@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Default suite" verbose="1" thread-count="3" parallel="tests">
-  <test verbose="2" name="chrome test">
+  <test verbose="2" name=" Free CRM chrome test">
 	<parameter name="browser"  value="chrome"
     <classes>
       <class name="com.aws.grid.AWS_GridSetup"/>
     </classes>
   </test> 
   
-  <test verbose="2" name="firefox test">
+  <test verbose="2" name="Free CRM firefox test">
 	<parameter name="browser"  value="firefox"
     <classes>
       <class name="com.aws.grid.AWS_GridSetup"/>
