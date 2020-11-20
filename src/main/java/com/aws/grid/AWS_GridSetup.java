@@ -14,6 +14,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -42,25 +43,25 @@ public class AWS_GridSetup {
 	public void setup(String browserName) {
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			DesiredCapabilities capabs = new DesiredCapabilities();
-			capabs.setCapability(CapabilityType.BROWSER_NAME, "chrome");
-			try {
-				driver = new RemoteWebDriver(new URL("http://172.31.11.10:4444/grid/consloe"), capabs);
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
+			driver = new ChromeDriver();
+			/*
+			 * DesiredCapabilities capabs = new DesiredCapabilities();
+			 * capabs.setCapability(CapabilityType.BROWSER_NAME, "chrome"); try { driver =
+			 * new RemoteWebDriver(new URL("http://172.31.11.10:4444/grid/consloe"),
+			 * capabs); } catch (MalformedURLException e) { // TODO Auto-generated catch
+			 * block e.printStackTrace(); }
+			 */
 		}
 		if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			DesiredCapabilities capabs = new DesiredCapabilities();
+			driver = new FirefoxDriver();
+			/*DesiredCapabilities capabs = new DesiredCapabilities();
 			capabs.setCapability(CapabilityType.BROWSER_NAME, "firefox");
 			try {
 				driver = new RemoteWebDriver(new URL("http://172.31.11.10:4444/grid/consloe"), capabs);
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
-			}
+			}*/
 
 		}
 
